@@ -9,20 +9,23 @@
     <!-- custom css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- favicon -->
-    <link rel="stylesheet" href="images/favicon.png">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <title>Book Archive - Find Your Books Here</title>
 </head>
-<body>
-    <header class="container text-center mt-3">
+<body class="container">
+    <header class="text-center mt-3">
         <h2 class="fw-bold mb-2 fs-1">Welcome to Book Archive</h1>
-        <h3>Find your desired books here</h2>
+        <h3>Find your desired books here!</h2>
             <div class="input-group my-3 mx-auto search-width">
-                <input type="text" class="border-info bg-transparent form-control" placeholder="Search Books Here" aria-label="Search Books Here" aria-describedby="button-addon2">
-                <button class="btn text-white fw-bold btn-secondary btn-outline-dark" type="button" id="button-addon2">Search</button>
+                <input id="search-field" type="text" class="border-info bg-transparent form-control" placeholder="Search Books Here" aria-label="Search Books Here" aria-describedby="button-addon2">
+                <button onclick="searchButton()" class="btn text-white fw-bold btn-secondary btn-outline-dark" type="button" id="button-addon2">Search</button>
             </div>
     </header>
-    
 
+    <main>
+        <div id="books-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        </div>
+    </main>
     
     <!-- bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
