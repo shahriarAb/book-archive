@@ -1,23 +1,28 @@
+// get elements using DOM
 const errorMessage = document.getElementById('error-message');
 const booksContainer = document.getElementById('books-container');
 const searchText = document.getElementById('search-field');
 const searchNumber = document.getElementById('search-number');
 
-const spinner = prop =>{
+// function for spinner
+const spinner = prop => {
     document.getElementById('spinner').style.display = prop;
 }
-const screenClear = prop =>{
+
+// function for clearing screen on click button
+const screenClear = prop => {
     booksContainer.style.display = prop;
 }
 
+// click button to operate
 document.getElementById('search-button').addEventListener('click', () => {
     spinner('block');
     screenClear('none');
-    errorMessage.textContent= '';
+    errorMessage.textContent = '';
     if (searchText.value === '') {
         booksContainer.textContent = '';
         spinner('none');
-        errorMessage.innerText = 'Please write something to search on the box!!';
+        errorMessage.innerText = 'Please write something on the box to search.';
         return;
     }
     else {
@@ -28,15 +33,17 @@ document.getElementById('search-button').addEventListener('click', () => {
     }
 });
 
+// talking search result and show on website
 const getBooksData = books => {
+    searchText.value = '';
     booksContainer.textContent = '';
     spinner('none');
     screenClear('flex');
-    if(books.length === 0){
+    if (books.length === 0) {
         errorMessage.innerText = 'Sorry, No books found! Try something else. Thank you.';
         return;
     }
-    else{
+    else {
         books.forEach(book => {
             const div = document.createElement('div');
             div.innerHTML = `
@@ -57,6 +64,7 @@ const getBooksData = books => {
     }
 }
 
+// to display how many result out of how many results display in a page
 document.getElementById('search-button').addEventListener('click', () => {
     searchNumber.style.display = 'none';
     const url = `http://openlibrary.org/search.json?q=${searchText.value}`;

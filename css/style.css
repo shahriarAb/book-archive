@@ -1,12 +1,14 @@
+.top-image{
+    height: 120px;
+    width: 120px;
+    display: block;
+    margin: auto;
+}
 .search-width{
     width: 35%;
 }
 #spinner{
     display: none;
-}
-.card-size{ /* some books contains extra information it its not matched with other cards that why this fixed style used */
-    /* height: 650px;
-    width: 262px; */
 }
 .book-cover-size{
     height: 318px;
