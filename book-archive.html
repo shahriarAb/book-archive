@@ -18,12 +18,23 @@
         <h3>Find your desired books here!</h2>
             <div class="input-group my-3 mx-auto search-width">
                 <input id="search-field" type="text" class="border-info bg-transparent form-control" placeholder="Search Books Here" aria-label="Search Books Here" aria-describedby="button-addon2">
-                <button onclick="searchButton()" class="btn text-white fw-bold btn-secondary btn-outline-dark" type="button" id="button-addon2">Search</button>
+                <button id="search-button" class="btn text-white fw-bold btn-secondary btn-outline-dark" type="button" id="button-addon2">Search</button>
             </div>
     </header>
 
     <main>
+        <div id="spinner" class="text-center">
+            <div class="spinner-border mt-3" role="status">
+            </div>
+        </div>
+
         <div id="books-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        </div>
+
+        <div id="error-message" class="text-danger text-center mt-3">
+        </div>
+
+        <div id="search-number" class="text-center text-primary fst-italic my-5">
         </div>
     </main>
     

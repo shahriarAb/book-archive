@@ -1,6 +1,13 @@
 .search-width{
     width: 35%;
 }
+#spinner{
+    display: none;
+}
+.card-size{
+    height: 650px;
+    width: 262px;
+}
 .book-cover-size{
     height: 318px;
     width: 255px;
