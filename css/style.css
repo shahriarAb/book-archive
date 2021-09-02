@@ -4,9 +4,9 @@
 #spinner{
     display: none;
 }
-.card-size{
-    height: 650px;
-    width: 262px;
+.card-size{ /* some books contains extra information it its not matched with other cards that why this fixed style used */
+    /* height: 650px;
+    width: 262px; */
 }
 .book-cover-size{
     height: 318px;
