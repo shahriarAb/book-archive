@@ -26,7 +26,7 @@ document.getElementById('search-button').addEventListener('click', () => {
         return;
     }
     else {
-        const url = `http://openlibrary.org/search.json?q=${searchText.value}`;
+        const url = `https://openlibrary.org/search.json?q=${searchText.value}`;
         fetch(url)
             .then(res => res.json())
             .then(data => getBooksData(data.docs));
@@ -50,7 +50,7 @@ const getBooksData = books => {
             div.innerHTML = `
             <div class="col border border-2 rounded-2 shadow card-size">
                 <div class="card h-100">
-                    <img src="https://covers.openlibrary.org/b/id/${book.cover_i ? book.cover_i : 'No cover found'}-L.jpg" class="card-img-top img-thumbnail book-cover-size" alt="">
+                    <img src="https://covers.openlibrary.org/b/id/${book.cover_i ? book.cover_i : 'No cover found'}-M.jpg" class="card-img-top img-thumbnail book-cover-size" alt="">
                     <div class="card-body">
                       <h4 class="card-title">${book.title}</h4>
                       <p class="card-text"><b>Written by:</b> ${book.author_name ? book.author_name[0] : 'no author name found'}</p>
@@ -68,7 +68,7 @@ const getBooksData = books => {
 // to display how many result out of how many results display in a page
 document.getElementById('search-button').addEventListener('click', () => {
     searchNumber.style.display = 'none';
-    const url = `http://openlibrary.org/search.json?q=${searchText.value}`;
+    const url = `https://openlibrary.org/search.json?q=${searchText.value}`;
     fetch(url)
         .then(res => res.json())
         .then(data => resultFound(data));
