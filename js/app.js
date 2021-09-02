@@ -45,6 +45,7 @@ const getBooksData = books => {
     }
     else {
         books.forEach(book => {
+            console.log(book)
             const div = document.createElement('div');
             div.innerHTML = `
             <div class="col border border-2 rounded-2 shadow card-size">
@@ -52,8 +53,8 @@ const getBooksData = books => {
                     <img src="https://covers.openlibrary.org/b/id/${book.cover_i ? book.cover_i : 'No cover found'}-L.jpg" class="card-img-top img-thumbnail book-cover-size" alt="">
                     <div class="card-body">
                       <h4 class="card-title">${book.title}</h4>
-                      <p class="card-text"><b>Written by:</b> ${book.author_name}</p>
-                      <p><b>Publisher:</b> ${book.publisher}</p>
+                      <p class="card-text"><b>Written by:</b> ${book.author_name ? book.author_name[0] : 'no author name found'}</p>
+                      <p><b>Publisher:</b> ${book.publisher ? book.publisher[0] : 'no publisher found'}</p>
                       <p><b>First Published Year:</b> ${book.first_publish_year}</p>
                     </div>
                 </div>
@@ -76,7 +77,7 @@ const resultFound = results => {
     searchNumber.textContent = '';
     const div = document.createElement('div');
     div.innerHTML = `
-    <h5>${results.docs.length} out of ${results.numFound} results displayed.</h5>
+    <h6>${results.docs.length} out of ${results.numFound} results displayed.</h6>
     `;
     if (results.numFound === 0) {
         searchNumber.style.display = 'none';
@@ -87,3 +88,4 @@ const resultFound = results => {
         searchNumber.appendChild(div);
     }
 }
+//finish of JavaScript code
